@@ -1,0 +1,16 @@
+<div (window:resize)="onResize($event)" [ngClass]="{ mini: menu.isMini }" class="container-fluid px-0">
+
+    <!-- Left Navbar start -->
+    <app-sidebar></app-sidebar>
+    <!-- Left Navbar end -->
+    <div class="right-admin-content">
+        <!-- Header start -->
+        <app-header></app-header>
+        <!-- Header end -->
+        <div class="right-admin-content-inner">
+            <router-outlet></router-outlet>
+        </div>
+
+        <app-options></app-options>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<button (click)="onClose()" aria-label="Close" class="btn-close-popup">
+    <i class="ic-close"></i>
+</button>
+<h2 mat-dialog-title> {{nameSingular}} </h2>
+
+<form (ngSubmit)="onFormSubmit()" [formGroup]="form" class="form-manage">
+
+    <mat-form-field>
+        <mat-label>Data da Reserva</mat-label>
+        <input type="date" formControlName="date_reserva" matInput required>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+        <mat-label>Hotel</mat-label>
+        <mat-select formControlName="hotel_id">
+            <mat-option *ngFor="let hotel of hotels"
+                        value={{hotel.id}}>{{hotel.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+        <mat-label>Quarto</mat-label>
+        <mat-select formControlName="bedroom_id">
+            <mat-option *ngFor="let bedroom of bedrooms"
+                        value={{bedroom.id}}>{{bedroom.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+        <mat-label>Hospede</mat-label>
+        <mat-select formControlName="guest_id">
+            <mat-option *ngFor="let guest of guests"
+                        value={{guest.id}}>{{guest.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-dialog-actions>
+        <button type="submit">Salvar</button>
+    </mat-dialog-actions>
+</form>

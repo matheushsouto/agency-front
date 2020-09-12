@@ -1,0 +1,10 @@
+<form [formGroup]="form" class="form-filter">
+
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input formControlName="name ILIKE" matInput>
+    </mat-form-field>
+
+    <button (click)="onClear()" class="btn-remove">Limpar</button>
+    <button (click)="onSearch()" class="btn-search">Filtrar</button>
+</form>

@@ -1,0 +1,42 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 200px 0px;
+}
+
+.mat-form-field {
+    min-width: 300px;
+}
+
+input {
+    height: 20px;
+    font-size: 15px;
+}
+
+mat-card-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 125px;
+}
+
+.mat-card {
+    width: 532px;
+    height: 573px;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-login {
+    margin: 10px;
+    background-color: #6bd241;
+}
+
+.button-forgot-password {
+    margin: 10px;
+    background-color: #9c9595;
+}
+

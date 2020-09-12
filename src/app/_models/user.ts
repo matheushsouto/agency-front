@@ -1,0 +1,34 @@
+export class User {
+    id: string;
+    client_id?: number;
+    partner_id?: number;
+    name: string;
+    login: string;
+    email?: string;
+    phone?: string;
+    logo: string;
+    connected_whats: string;
+    permission_id: Number;
+    token: string;
+    temporary_password: boolean;
+    logo_client: string;
+    configuration_client_id: number;
+    count_called: number;
+    count_called_date: string;
+    count_called_day: number;
+    count_called_finalized: number;
+    count_called_month: number;
+    count_called_progress: number;
+    count_message_recent: string;
+    count_partner: string;
+    count_package_sale: string;
+    count_partner_month: string;
+    count_package_expiration_month: string;
+    value_received_month: string;
+    employee_name: string;
+    bot: string;
+    option_invalid: string;
+    protocol: string;
+    expiration_called: string;
+    message_option_invalid: string;
+}

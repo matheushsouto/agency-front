@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Remover */
+.options-icon, .user-pic {
+    display: none !important;
+}
+
+/*.inner-page-header-in:before {content: ''; width: 100px; height: 90px; background: url('https://www.pigalleburguer.com.br/android-icon-192x192.png'); position: absolute; background-size: cover; top: 0; right: 50%; box-shadow: 0 0 20px rgba(0,0,0,0.1); background-repeat: no-repeat; background-position: center; border-radius: 0 0 4px 4px;}*/
+
+/*.logo-cnt {width: 130px; justify-content: center; align-items: center; border-radius: 0 0 6px 6px; overflow: hidden;}*/
+.inner-page-header {height:auto !important;box-shadow: 0 2px 5px 0 #d5dee8;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12) !important;}
+.btn-clear.dropdown-toggle {padding-right:10px;}
+.inner-page-header-in {display:inherit !important;width:100%;}
+.inner-page-header-in .row {display:flex;flex-wrap:nowrap;}
+.inner-page-header-in .row .col-lg-6 {width: 100%; align-items: center; display: flex;padding-left:10px;}
+.inner-page-header-in .row .col-lg-6:nth-child(3n) {justify-content: flex-end;padding-right:10px;}
+body, html, .right-admin-content {background:#eaeff5 !important;}
+.right-admin-content {padding: 10px 50px 40px 50px !important;height:auto !important;}
+.right-admin-content header {left:240px;}
+.left-sidebar {background:#fff !important;box-shadow: 0 0 10px 0 #d5dee8;z-index: 99999999;}
+.mat-tooltip-trigger.inner-li {height:43px!important;padding:0 23px !important;}
+.mat-tooltip-trigger.inner-li:hover {background:#f1f1f1 !important}
+.mat-tooltip-trigger.inner-li.active {background:none !important;}
+.mat-tooltip-trigger.inner-li.active span {color:red !important;font-weight:bold !important;}
+.mat-tooltip-trigger.inner-li.active:before {background:#ee2e30 !important;}
+.mini .right-admin-content header {left:62px !important;}
+
+.btn-clear.btn-menu {border-radius: 50%;background:#ed1d23;margin-left: -20px;box-shadow: 0 0 5px rgba(237,29,35,0.6);width:32px;height:32px;}
+.btn-clear.btn-menu i {width:24px !important;background:url('arrow-left.svg') no-repeat center center; background-size: 16px;}
+.btn-clear.btn-menu:hover i {width:24px !important;background:url('arrow-left.svg') no-repeat center center !important;background-size: 16px !important;}
+
+.mini .btn-clear.btn-menu i {transform: rotate(180deg); margin-left: 5px !important;}
+.inner-page-title header {font-weight: bold !important; font-size: 24px!important; text-transform: uppercase !important; color: #3c4146 !important; border-bottom: 1px solid #d3d9de !important;}
+
+#teste > ul {background: #fff; padding: 20px; border-radius: 8px; margin: 0;}
+#teste > ul li {font-size: 14px; color: #292e33;}
+#teste ul {padding-left:28px !important;}
+
+/*#teste ul li ul {background:#ccd3da !important;}
+#teste ul li ul li ul {background:#e2e7ec !important;}
+#teste ul li ul li ul li ul {background:#ccd3da !important;}
+#teste ul li ul li ul li ul li ul {background:#e2e7ec !important;}
+#teste ul li ul li ul li ul li ul li ul {background:#ccd3da !important;}*/
+
+/*#teste ul li {overflow:hidden !important;text-overflow:ellipsis !important;white-space:nowrap !important;}*/
+.mat-mini-fab {width: 30px; height: 30px; box-shadow: inherit !important; border: 1px solid #eaeaea;box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important; border-radius:2px;}
+.material-icons {font-size:16px;}
+.mat-mini-fab .mat-button-wrapper {line-height:0;padding:0;}
+.mat-mini-fab {line-height: 0;}
+.material-icons {line-height: 24px;}
+.mat-mini-fab.mat-accent {margin:0;margin-left:3px;}
+#teste > ul li > span {border-left: 1px solid #b5b5b5; display: inline-block; padding: 10px 12px; font-weight: 500;font-size: 15px;background: #f3f3f3;margin-right:15px;}
+#teste ul li b {background: #ed1d23; border-radius: 3px; color: #fff; padding: 4px 6px; margin-right: 6px; font-size: 9px; border-radius:4px;}
+#teste ul li:hover > span > b {background: #333}
+#teste ul li:focus > span > b {background: #333}
+#teste ul li:hover > span {border-left:1px solid #333;}
+#teste ul li:hover:before {content: ''; position: absolute; top: 0; left: -5px; background: url('uparroup2.png') no-repeat left top !important; background-size: 12px !important; width: 15px; height: 10px;}
+#teste ul li {position:relative;margin-top: 10px;}
+#teste ul li > div > ul {border-left:1px dashed  #b3b3b3;}
+#teste > ul li:before {content: ''; position: absolute; top: 0; left: -5px; background: url('uparroup.png') no-repeat left top !important; background-size: 12px !important; width: 15px; height: 10px;}
+#teste > ul > li:first-child:before {display:none;}
+
+/* AJUSTA O MODAL NA TELA */
+.cdk-overlay-dark-backdrop {background:transparent;}
+.mat-dialog-container {box-shadow:none;}
+.cdk-overlay-pane {max-width:100vw !important;width:100% !important;height:100%;}
+.left-sidebar, .right-admin-content header {z-index:99999999 !important;}
+.mat-dialog-container {transform: none !important; padding-top: 70px !important; padding-right: 80px !important; padding-left: 320px !important; padding-bottom: 40px !important; overflow-y: scroll !important;}

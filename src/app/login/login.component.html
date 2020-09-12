@@ -1,0 +1,23 @@
+<mat-card>
+    <br><br><br><br>
+    <mat-card-title align="center">Agencia de Turismo</mat-card-title>
+    <mat-card-content>
+        <form (ngSubmit)="onFormSubmit()" [formGroup]="form" class="form-manage">
+
+            <mat-form-field>
+                <mat-label>Login</mat-label>
+                <input formControlName="login" matInput maxlength="25" minlength="3" required>
+                <mat-error *ngIf="hasError('login')">{{getMessageError('login')}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Senha</mat-label>
+                <input formControlName="password" matInput type="password" maxlength="25" minlength="3" required>
+                <mat-error *ngIf="hasError('password')">{{getMessageError('password')}}</mat-error>
+            </mat-form-field>
+
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </mat-card-content>
+</mat-card>

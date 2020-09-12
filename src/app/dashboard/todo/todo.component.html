@@ -1,0 +1,42 @@
+<div class="card border-0" widget>
+    <div class="card-header transparent border-0 text-muted brder-btm mb-3">
+    </div>
+
+    <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Histórico de Transações
+                </div>
+                <div *ngFor="let transaction of transactions" class="card-body">
+                    <div class="iq-card">
+                        <div class="iq-card-body">
+                            <ul class="suggestions-lists m-0 p-0">
+                                <li class="d-flex mb-4 align-items-center">
+                                    <div class="media-support-info ml-3"><h6>{{transaction.type.name}}</h6>
+                                        <p class="mb-0">{{transaction.created_at | date:"dd/MM/yyyy"}}</p></div>
+                                    <div class="media-support-amount ml-3"><h6 class="text-primary">
+                                        R${{transaction.value}}</h6>
+                                        <p class="mb-0">{{ !transaction.status ? "Em Aberto" : "Pago" }}</p></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Clientes
+                </div>
+                <div class="card-body">
+                    <canvas [chartType]="doughnutChartType" [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                            baseChart></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

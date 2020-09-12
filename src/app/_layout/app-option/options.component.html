@@ -1,0 +1,16 @@
+<div [ngClass]="{'show': showOptions}" class="options transition">
+    <button (click)="showOptions = !showOptions" class="options-icon mat-elevation-z0" mat-raised-button>
+        <i class="fas fa-palette"></i>
+    </button>
+    <mat-card fxLayout="column" fxLayoutAlign="space-between center">
+        <span (click)="changeTheme('white')" class="skin-icon white"></span>
+        <span (click)="changeTheme('black')" class="skin-icon black"></span>
+        <span (click)="changeTheme('green')" class="skin-icon green"></span>
+        <span (click)="changeTheme('blue')" class="skin-icon blue"></span>
+        <span (click)="changeTheme('red')" class="skin-icon red"></span>
+        <span (click)="changeTheme('#FF1493')" class="skin-icon pink"></span>
+        <span (click)="changeTheme('purple')" class="skin-icon purple"></span>
+        <span (click)="changeTheme('grey')" class="skin-icon grey"></span>
+        <span (click)="changeTheme('#FFFF00')" class="skin-icon yellow"></span>
+    </mat-card>
+</div>

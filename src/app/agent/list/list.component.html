@@ -1,0 +1,54 @@
+<div class="container">
+
+    <app-action (eventEmitter)="processResult($event)" [namePlural]="namePlural" [routeApi]="routeApi"></app-action>
+
+    <app-search (groupFilters)="all()"></app-search>
+
+    <ngx-datatable (page)="setPage($event)" (select)="onSelect($event)" (sort)="onSort($event.sorts[0])"
+                   *ngIf="items.length > 0" [columnMode]="'flex'" [count]="pageInfo.count" [externalPaging]="true"
+                   [footerHeight]="50"
+                   [headerHeight]="50" [limit]="pageInfo.pageSize" [offset]="pageInfo.pageNumber"
+                   [rowHeight]="'auto'"
+                   [rows]="items" [selected]="selected"
+                   [selectionType]="'checkbox'" class="material">
+
+        <ngx-datatable-column [canAutoResize]="false" [checkboxable]="true" [draggable]="true" [flexGrow]="1"
+                              [headerCheckboxable]="true"
+                              [resizeable]="false" [sortable]="false" [width]="5">
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [flexGrow]="1" [width]="35" cellClass="text-truncate" name="#" prop="id">
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                <span>{{ value }}</span>
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [flexGrow]="2" [width]="25" name="Nome" prop="name">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+                {{ value}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [flexGrow]="3" [width]="25" name="CPF" prop="cpf">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+                {{ value}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [flexGrow]="2" [width]="25" name="Email" prop="email">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+                {{ value}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [flexGrow]="2" [width]="25" name="">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                <a (click)="manage(row.id)" *ngIf="canUpdate" matTooltip="Editar">
+                    <i class="fa fa-edit fa-lg"></i>
+                </a>
+            </ng-template>
+        </ngx-datatable-column>
+    </ngx-datatable>
+
+    <app-no-data-found [items]="items" [nameSingular]="nameSingular"></app-no-data-found>
+</div>

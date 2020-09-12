@@ -1,0 +1,22 @@
+<div class="row title-row">
+  <div class="col-lg-9">
+      <div class="inner-page-title header">{{namePlural}}
+        <div style="float: right" class="social__icons">
+          <button mat-mini-fab  (click)="emit('manage')" matTooltip="Adicionar">
+            <mat-icon>add</mat-icon>
+          </button>
+          <button mat-mini-fab (click)="emit('delete')" matTooltip="Deletar" *ngIf="canDelete">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+          <button mat-mini-fab (click)="emit('changeStatus', true)" matTooltip="Ativar" *ngIf="canUpdate">
+            <mat-icon>lock_open</mat-icon>
+          </button>
+          <button mat-mini-fab (click)="emit('changeStatus', false)" matTooltip="Desativar" *ngIf="canUpdate">
+            <mat-icon>lock_outline</mat-icon>
+          </button>
+          <button mat-mini-fab (click)="emit('showHints')" matTooltip="Ajuda">
+            <mat-icon>help_outline</mat-icon>
+          </button>
+        </div>
+    </div>
+</div>

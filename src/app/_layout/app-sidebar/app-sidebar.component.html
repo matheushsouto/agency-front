@@ -1,0 +1,70 @@
+<div [ngClass]="{ mini: menu.isMini }" class="left-sidebar">
+    <div class="left-menu-cnt">
+        <perfect-scrollbar>
+            <ul>
+                <li>
+                    <div [matTooltip]="menu.isMini ? 'Dashboard' : ''" [routerLink]="['/admin/dashboard']"
+                         class="inner-li"
+                         routerLinkActive="active">
+                        <i class="fa fa-tachometer"></i><span>Dashboard</span>
+                    </div>
+                </li>
+                <li *ngIf="capabilityService.canShowMenu(route.PERSONA_GUEST)">
+                    <div [matTooltip]="menu.isMini ? 'Hospede' : ''" [routerLink]="['/admin/hospede']"
+                         class="inner-li"
+                         routerLinkActive="active">
+                        <i class="fas fa-users"></i><span>Hospedes</span>
+                    </div>
+                </li>
+
+                <li *ngIf="capabilityService.canShowMenu(route.PERSONA_MANAGER)">
+                    <div [matTooltip]="menu.isMini ? 'Gerente' : ''" [routerLink]="['/admin/gerente']"
+                         class="inner-li"
+                         routerLinkActive="active">
+                        <i class="fas fa-users"></i><span>Gerentes</span>
+                    </div>
+                </li>
+
+                <li *ngIf="capabilityService.canShowMenu(route.PERSONA_AGENT)">
+                    <div [matTooltip]="menu.isMini ? 'Agente de Viagens' : ''" [routerLink]="['/admin/agente']"
+                         class="inner-li"
+                         routerLinkActive="active">
+                        <i class="fas fa-users"></i><span>Agente de Viagens</span>
+                    </div>
+                </li>
+
+                <li *ngIf="capabilityService.canShowMenu(route.PERSONA_AGENT)">
+                    <div [matTooltip]="menu.isMini ? 'Atendente' : ''" [routerLink]="['/admin/atendente']"
+                         class="inner-li"
+                         routerLinkActive="active">
+                        <i class="fas fa-users"></i><span>Atendente</span>
+                    </div>
+                </li>
+
+                <li *ngIf="capabilityService.canShowMenu(route.BOOKING_HOTEL)">
+                    <div [matTooltip]="menu.isMini ? 'Hotel' : ''" [routerLink]="['/admin/hotel']"
+                         class="inner-li"
+                         routerLinkActive="active">
+                        <i class="fas fa-users"></i><span>Hotel</span>
+                    </div>
+                </li>
+
+                <li *ngIf="capabilityService.canShowMenu(route.BOOKING_BEDROOM)">
+                    <div [matTooltip]="menu.isMini ? 'Quarto' : ''" [routerLink]="['/admin/quarto']"
+                         class="inner-li"
+                         routerLinkActive="active">
+                        <i class="fas fa-users"></i><span>Quarto</span>
+                    </div>
+                </li>
+
+                <li *ngIf="capabilityService.canShowMenu(route.BOOKING_RESERVA)">
+                    <div [matTooltip]="menu.isMini ? 'Reserva' : ''" [routerLink]="['/admin/reserva']"
+                         class="inner-li"
+                         routerLinkActive="active">
+                        <i class="fas fa-users"></i><span>Reserva</span>
+                    </div>
+                </li>
+            </ul>
+        </perfect-scrollbar>
+    </div>
+</div>

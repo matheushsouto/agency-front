@@ -1,0 +1,23 @@
+@import "../../../assets/theme/variables";
+
+.right-admin-content {
+	width: calc(100% - 240px);
+	display: block;
+	background:  transparent;
+	margin-left: 240px;
+	transition: ease 0.2s;
+	height: calc(100vh - 70px);
+	margin-top: 70px;
+
+	.right-admin-content-inner {
+		position: relative;
+		padding: 30px 50px 50px 50px;
+	}
+}
+
+.mini {
+	.right-admin-content {
+		width: calc(100% - 0);
+		transition: all 0.2s ease-out 0s;
+	}
+}

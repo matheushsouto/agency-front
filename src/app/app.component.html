@@ -1,0 +1,6 @@
+<perfect-scrollbar class="scroll-content">
+    <router-outlet></router-outlet>
+</perfect-scrollbar>
+<ng-http-loader [debounceDelay]="0" [minDuration]="0" [spinner]="spinkit.skThreeBounce"
+                [filteredUrlPatterns]="['called/message/visualized/\\d', 'called/message']"
+></ng-http-loader>

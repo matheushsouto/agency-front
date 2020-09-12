@@ -1,0 +1,47 @@
+<header>
+  <mat-toolbar class="nvmenuclass">
+    <div class="flex-col-4">
+      <button mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div *ngIf="battery" class="battery">{{battery ? battery + '%'  : ''}}
+          <!--<i class="fas fa-battery-three-quarters"></i>-->
+          <div class="{{battery < 20 ? 'red' : battery >= 20 && battery <= 50 ? 'yellow' : 'green'}} bateria-icone">
+            <i class="bateria-icone-intro" style="width:{{battery ? battery  : ''}}%;"></i>
+          </div>
+          <span class="state-battery">{{state}}</span>
+      </div>
+    </div>
+    <div class="flex-col-4 flex-center">
+      <i class="flex-logo">
+        <img [src]="user.logo_client"/>
+      </i>
+    </div>
+    <div class="flex-col-4 flex-final">
+      <div class="avatar"><img [src]="user.logo" width="50"/></div>
+      <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger">
+        <span>{{ user.name }} </span>
+        <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+      </a>
+      <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown account">
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info" style="background: white">
+          <img src="{{user.logo}}" class="image-place">
+          <p>{{ user.name }}<br></p>
+        </div>
+        <div class="divider"></div>
+        <a mat-menu-item (click)="editProfile()">
+          <mat-icon>person</mat-icon>
+          <span>Alterar Perfil</span>
+        </a>
+        <a mat-menu-item (click)="changePassword()">
+          <mat-icon>vpn_key</mat-icon>
+          <span>Alterar Senha</span>
+        </a>
+        <a mat-menu-item routerLink="/">
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Sair</span>
+        </a>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</header>

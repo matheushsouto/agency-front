@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <div class="title-row py-0">
+        <div class="inner-page-title">Alterar Perfil</div>
+    </div>
+    <button (click)="onClose()" aria-label="Close" class="pull-right btn-close-popup">
+        <i class="ic-close"></i>
+    </button>
+</div>
+<div class="modal-body">
+    <form (ngSubmit)="onFormSubmit()" [formGroup]="form" class="form-manage">
+
+        <img [src]="this.logo" class="avatar"/>
+        <br>
+        <input (change)="onFileChange($event)" accept="image/*" type="file"/>
+
+        <br>
+        <br>
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input formControlName="name" matInput maxlength="55" minlength="3" required>
+            <mat-error *ngIf="hasError('name')">{{getMessageError('name')}}</mat-error>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+            <mat-error *ngIf="hasError('email')">{{getMessageError('email')}}</mat-error>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field>
+            <mat-label>Telefone</mat-label>
+            <input formControlName="phone" mask="(00) 0000-0000" matInput>
+            <mat-error *ngIf="hasError('phone')">{{getMessageError('phone')}}</mat-error>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field>
+            <mat-label>Login</mat-label>
+            <input (change)="onContains(table.USER, 'login', user.login)" formControlName="login" matInput
+                   maxlength="55" minlength="3"
+                   required>
+            <mat-error *ngIf="hasError('login')">{{getMessageError('login')}}</mat-error>
+        </mat-form-field>
+
+        <br>
+        <button type="submit">Salvar</button>
+    </form>
+</div>

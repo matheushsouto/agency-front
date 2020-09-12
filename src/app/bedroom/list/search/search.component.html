@@ -1,0 +1,20 @@
+<form [formGroup]="form" class="form-filter">
+
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input formControlName="name LIKE" matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Qntd de Quartos</mat-label>
+        <input formControlName="count_bed =" matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Qntd de Pessoas</mat-label>
+        <input formControlName="count_people =" matInput>
+    </mat-form-field>
+
+    <button (click)="onClear()" class="btn-remove">Limpar</button>
+    <button (click)="onSearch()" class="btn-search">Filtrar</button>
+</form>

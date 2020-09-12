@@ -1,0 +1,75 @@
+<div class="modal-header">
+    <div class="title-row py-0">
+        <div class="inner-page-title">Gerenciar permissão do usuário {{name}}</div>
+    </div>
+    <button (click)="close()" aria-label="Close" class="pull-right btn-close-popup">
+        <i class="ic-close"></i>
+    </button>
+</div>
+<div class="modal-body">
+    <table [dataSource]="modules" mat-table matSort>
+
+        <ng-container matColumnDef="module">
+            <th *matHeaderCellDef mat-header-cell mat-sort-header>Módulo</th>
+            <td *matCellDef="let row" mat-cell> {{row.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="read">
+            <th *matHeaderCellDef mat-header-cell mat-sort-header>Ler</th>
+            <td *matCellDef="let row" mat-cell>
+
+                <div (click)="updateOrCreate(row, 'read')" *ngIf="!row.capability.read" class="capability-uncheck">
+                    <a class="a-remove" data-toggle="matTooltip" ngbmatTooltip="Ativar">
+                        <i class="fa fa-remove "></i>
+                    </a>
+                </div>
+
+                <div (click)="updateOrCreate(row, 'read')" *ngIf="row.capability.read" class="capability-check">
+                    <a class="a-check" data-toggle="matTooltip" ngbmatTooltip="Desativar">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="write">
+            <th *matHeaderCellDef mat-header-cell mat-sort-header>Alterar</th>
+            <td *matCellDef="let row" mat-cell>
+
+                <div (click)="updateOrCreate(row, 'write')" *ngIf="!row.capability.write" class="capability-uncheck">
+                    <a class="a-remove" data-toggle="matTooltip" ngbmatTooltip="Ativar">
+                        <i class="fa fa-remove "></i>
+                    </a>
+                </div>
+
+                <div (click)="updateOrCreate(row, 'write')" *ngIf="row.capability.write" class="capability-check">
+                    <a class="a-check" data-toggle="matTooltip" ngbmatTooltip="Desativar">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </div>
+
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th *matHeaderCellDef mat-header-cell mat-sort-header>Deletar</th>
+            <td *matCellDef="let row;" mat-cell>
+
+                <div (click)="updateOrCreate(row, 'delete')" *ngIf="!row.capability.delete" class="capability-uncheck">
+                    <a data-toggle="matTooltip" ngbmatTooltip="Ativar">
+                        <i class="fa fa-remove"></i>
+                    </a>
+                </div>
+
+                <div (click)="updateOrCreate(row, 'delete')" *ngIf="row.capability.delete" class="capability-check">
+                    <a data-toggle="matTooltip" ngbmatTooltip="Desativar">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+    </table>
+</div>

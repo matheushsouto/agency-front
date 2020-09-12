@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>
+    {{title}}
+</h1>
+
+<mat-dialog-content>
+    <p>{{message}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button (click)="onDismiss()" class="bt-on-dismiss" mat-raised-button>Não</button>
+    <button (click)="onConfirm()" class="bt-on-confirm" mat-raised-button>Sim</button>
+</mat-dialog-actions>
